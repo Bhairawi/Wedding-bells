@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhairawi & Sushant - Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Welcome to the Celebration</h1>
+      <h2>Bhairawi <span>❤️</span> Sushant</h2>
+      <p>Daughter of Sanjay & Sangita Tichkule<br>
+         Son of Baburao & Sunita Tijare</p>
+    </header>
+
+    <section class="video-section">
+      <video controls>
+        <source src="bhairawi.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <div class="tabs">
+      <button class="tab-link active" onclick="openTab(event, 'engagement')">💍 Engagement</button>
+      <button class="tab-link" onclick="openTab(event, 'haldi')">🌼 Haldi</button>
+      <button class="tab-link" onclick="openTab(event, 'wedding')">👰‍♀️ Wedding</button>
+      <button class="tab-link" onclick="openTab(event, 'reception')">🎉 Reception</button>
+    </div>
+
+    <!-- Engagement Tab -->
+    <div id="engagement" class="tab-content active">
+      <h3>Engagement - 17 November 2021</h3>
+      <div class="gallery">
+        <img src="engagement1.jpg" alt="Engagement Photo 1">
+        <img src="engagement2.jpg" alt="Engagement Photo 2">
+      </div>
+    </div>
+
+    <!-- Haldi Tab -->
+    <div id="haldi" class="tab-content">
+      <h3>Haldi - 20 November 2021</h3>
+      <div class="gallery">
+        <img src="haldi1.jpg" alt="Haldi Photo 1">
+        <img src="haldi2.jpg" alt="Haldi Photo 2">
+      </div>
+    </div>
+
+    <!-- Wedding Tab -->
+    <div id="wedding" class="tab-content">
+      <h3>Wedding - 21 November 2021</h3>
+      <p>Venue: IMA Hall, Bhandara</p>
+      <div class="gallery">
+        <img src="wedding1.jpg" alt="Wedding Photo 1">
+        <img src="wedding2.jpg" alt="Wedding Photo 2">
+      </div>
+    </div>
+
+    <!-- Reception Tab -->
+    <div id="reception" class="tab-content">
+      <h3>Reception - 22 November 2021</h3>
+      <p>Venue: Mathura Vrindavan, Nagpur</p>
+      <div class="gallery">
+        <img src="reception1.jpg" alt="Reception Photo 1">
+        <img src="reception2.jpg" alt="Reception Photo 2">
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with ❤️ by Bhairawi & Sushant</p>
+    </footer>
+  </div>
+
+  <script>
+    function openTab(evt, tabName) {
+      let i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      tablinks = document.getElementsByClassName("tab-link");
+
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.remove("active");
+      }
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+
+      document.getElementById(tabName).style.display = "block";
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    // Default tab on load
+    window.onload = function() {
+      document.querySelector(".tab-link.active").click();
+    };
+  </script>
+</body>
+</html>
